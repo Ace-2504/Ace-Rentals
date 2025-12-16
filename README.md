@@ -5,21 +5,24 @@
 1. [Overview](#overview)
 2. [Problem Statement](#problem-statement)
 3. [Tech Stack](#tech-stack)
-4. [Functional Requirements](#functional-requirements)
-5. [Non-Functional Requirements](#non-functional-requirements)
-6. [Repository Layout](#repository-layout)  
-7. [Installation and Setup](#installation-and-setup)
-8. [Usage](#usage) 
-9. [API Endpoints](#api-endpoints)
-10. [System Design and Request Flow](#system-design-and-request-flow)
-11. [Future Features](#future-features) 
-12. [Contributing](#contributing)
-13. [License](#license)
-14. [Acknowledgements](#acknowledgements)
+4. [Architecture](#architecture)
+5. [Functional Requirements](#functional-requirements)
+6. [Non-Functional Requirements](#non-functional-requirements)
+7. [Repository Layout](#repository-layout)  
+8. [Installation and Setup](#installation-and-setup)
+9. [Usage](#usage) 
+10. [API Endpoints](#api-endpoints)
+11. [System Design and Request Flow](#system-design-and-request-flow)
+12. [Future Features](#future-features) 
+13. [Contributing](#contributing)
+14. [License](#license)
+15. [Acknowledgements](#acknowledgements)
 
 ## Overview
 
 Ace Rentals is a full-stack web application built with Node.js and Express, designed for listing properties such as homes, apartments, or vacation spots for rent. Users can create listings with images and location data, browse available rentals, leave reviews, and manage their accounts securely.
+
+**Architecture**: MVC-based backend with middleware-driven authentication, authorization, and centralized error handling.
 
 This project is inspired by platforms like Airbnb, focusing on property rentals with features like user authentication, image uploads, geocoding for locations, and review systems.
 
@@ -39,6 +42,23 @@ Traditional property rentals often lack transparency, security, and ease of use,
 - **Templating**: EJS with ejs-mate
 - **Session Management**: express-session with connect-flash for messages
 - **Other**: method-override for PUT/DELETE, dotenv for environment variables
+
+
+## Architecture
+
+Ace-Rentals follows the MVC (Model–View–Controller) architecture pattern to ensure
+clean separation of concerns and maintainable backend design.
+
+- *⁠*Models** manage database schemas and data access using MongoDB and Mongoose  
+- **Controllers** handle request–response logic and coordinate application flow  
+- *⁠*Routes** map HTTP endpoints to their respective controllers  
+- ⁠**Views** are rendered using EJS templates for server-side rendering  
+- *⁠*Middleware** enforces authentication, authorization, validation, and
+  centralized error handling  
+
+All critical business rules and permission checks are handled on the server,
+while the frontend remains focused on presentation and user interaction.
+
 
 ## Functional Requirements
 
@@ -140,7 +160,7 @@ This keeps the system secure, predictable, and easy to maintain.
 - **Consistent request handling**: all requests follow the same flow for clarity and reliability.
 - **Central error handling**: shared logic is handled in one place
 
-**Flowcharts for better understanding of System Design and Data Flow are given below**:
+**The following flowchart represents the standard backend request lifecycle used across the application**
 
 <img width="1622" height="648" alt="image" src="https://github.com/user-attachments/assets/34cf4ec7-bed0-4ece-98e7-72ce23272a40" />
 
