@@ -2,7 +2,7 @@
 
 ## Index
 
-1. [Overview](#overview)
+1. [Overview(1-line Architecture summary)](#overview)
 2. [Problem Statement](#problem-statement)
 3. [Tech Stack](#tech-stack)
 4. [Architecture](#architecture)
@@ -22,9 +22,9 @@
 
 Ace Rentals is a full-stack web application built with Node.js and Express, designed for listing properties such as homes, apartments, or vacation spots for rent. Users can create listings with images and location data, browse available rentals, leave reviews, and manage their accounts securely.
 
-**Architecture**: MVC-based backend with middleware-driven authentication, authorization, and centralized error handling.
-
 This project is inspired by platforms like Airbnb, focusing on property rentals with features like user authentication, image uploads, geocoding for locations, and review systems.
+
+**Architecture**: MVC-based backend with middleware-driven authentication, authorization, and centralized error handling.
 
 ## Problem Statement  
 
